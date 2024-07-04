@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 	 
-	static WebDriver driver;
+	public static WebDriver driver;
 
 	//Locators
 	private By emailInputLocator = By.name("email");

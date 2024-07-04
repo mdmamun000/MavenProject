@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="./features/LoginTest.feature",
+		features={"./features/FBLogin.feature"},
 		plugin = {"pretty","html:target-reports/cucumber-reports.html",
 		"json:target/cucumber.json"},
 		glue = "/stepImplementation" 

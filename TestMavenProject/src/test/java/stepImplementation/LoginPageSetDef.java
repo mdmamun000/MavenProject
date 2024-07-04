@@ -21,28 +21,38 @@ import io.cucumber.java.Before;
 import io.cucumber.java.After;
 public class LoginPageSetDef {
 
-	private WebDriver driver;
-	private LoginPage loginPage;
+	//private WebDriver driver;
+	//private LoginPage loginPage;
+	 WebDriver driver;
+	 LoginPage loginPage;
 
-	@Before	
-	public void setup() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-	}
-	
-	@After
-	public void tearDown() {
-		if(driver!=null) {
-			driver.quit();
-		}
-	}
+//	@Before	
+//	public void setup() {
+//		//WebDriverManager.chromedriver().setup();
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdmam\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+//
+//		driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+//	}
+//	
+//	@After
+//	public void tearDown() {
+//		if(driver!=null) {
+//			driver.quit();
+//		}
+//	}
 
 	@Given("I am on the OpenCart Login Page")
 	public void i_am_on_the_open_cart_login_page() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdmam\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 
-		loginPage = new LoginPage(driver);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+	//}
+
+	//	loginPage = new LoginPage(driver);
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 
 		//loginPage = new LoginPage(driver);
@@ -76,6 +86,5 @@ public class LoginPageSetDef {
 		Assert.assertTrue(LoginPage.getForgotPwdPageUrl().contains("account/forgotten"));
 
 	}
-
 
 }
