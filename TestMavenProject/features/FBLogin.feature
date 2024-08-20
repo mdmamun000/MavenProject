@@ -8,4 +8,5 @@ Feature: Login verification in FB
 
     Examples: 
       | username                | password      |
+      | saintjohn.usc@gmail.com |    ee           |
       | saintjohn.usc@gmail.com | Fatimaruja518 |

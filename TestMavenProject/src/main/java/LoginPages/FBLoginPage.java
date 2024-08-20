@@ -9,7 +9,8 @@ public class FBLoginPage {
 	static WebDriver driver;
 	
 	//Locators
-	private By emailInputLocator = By.name("email");
+	By emailInputLocator = By.name("email");
+	//private By emailInputLocator = By.name("email");
 	private By passwordInputLocator = By.name("pass");
 
 	private By loginButtonLocator = By.name("login");
